@@ -2,3 +2,10 @@ html,body {
   height: 90%;
   margin: 0;
 }
+
+body {
+  background-image: url("http://feelthehome.com/wp-content/uploads/2012/02/black-bamboo-flooring-for-home.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 110%;
+  color: white;
+}
