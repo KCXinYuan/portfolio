@@ -2,27 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Blog</title>
+    <title>Kevin Chuang</title>
     <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="styles/flex.css">
+    <link rel="stylesheet" href="styles/style.css">
   </head>
   <body>
+    <header id="mainHeader">
+      <h1 id="mainHOne">
+        Kevin Chuang
+      </h1>
+
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="portfolio.html">Projects</a></li>
+        <li><a href="tba">About</a></li>
+        <li><a href="https://www.facebook.com/kcxinyuan" target="_blank">Facebook</a></li>
+        <li><a href="http://github.com/KCXinYuan" target="_blank">Github</a></li>
+      </ul>
+    </nav>
+
     <main>
-        <header>
-          <h1>
-            Kevin Chuang
-          </h1>
-          <p>The shocking power of static pages</p>
-        </header>
-        <nav>
-          <ul>
-            <li>Articles</li>
-            <li>About (coming soon!)</li>
-            <li><a href="http://twitter.com/brookr" target="_blank">Twitter</a></li>
-            <li><a href="http://github.com/brookr" target="_blank">Github</a></li>
-          </ul>
-        </nav>
         <section id="articles">
           <article class="template" data-category="cat">
             <header>
@@ -42,6 +46,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
-    <script src="script.js"></script>
+    <script src="scripts/blogArticles.js"></script>
+    <script src="scripts/script.js"></script>
   </body>
 </html>
