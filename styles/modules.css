@@ -23,3 +23,8 @@
 .pull-right {
   float: right;
 }
+
+.filter {
+  list-style: none;
+  color: black;
+}

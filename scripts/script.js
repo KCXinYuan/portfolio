@@ -1,7 +1,7 @@
 var articles = [];
 
 function Article (opts) {
-  this.title = opts.author;
+  this.title = opts.title;
   this.category = opts.category;
   this.author = opts.author;
   this.authorUrl = opts.authorUrl;
@@ -17,6 +17,8 @@ Article.prototype.toHtml = function() {
   $newArticle.data('authorUrl', this.authorUrl);
   $newArticle.data('publishedOn', this.publishedOn);
   $newArticle.data('body', this.body);
+
+  $newArticle.attr('data-category', this.category);
 
   $newArticle.find('h1').html(this.title);
   $newArticle.find('a').html(this.author);

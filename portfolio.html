@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/flex.css">
-    <link rel="stylesheet" href="styles/style.css">
   </head>
   <body>
     <header id="mainHeader">
@@ -17,17 +16,24 @@
 
     </header>
 
-    <nav>
-      <ul>
-        <li><a href="portfolio.html">Projects</a></li>
-        <li><a href="tba">About</a></li>
+    <nav class="main-nav">
+      <ul id="nav">
+        <li><a class="tab" data-content="articles" a href="#">Projects</a></li>
+        <li><a class="tab" data-content="about" a href="#">About</a></li>
         <li><a href="https://www.facebook.com/kcxinyuan" target="_blank">Facebook</a></li>
         <li><a href="http://github.com/KCXinYuan" target="_blank">Github</a></li>
+      </ul>
+      <ul class="filter">
+        <li>
+          <select id="category-filter">
+            <option value="">Filter by Categories</option>
+          </select>
+        </li>
       </ul>
     </nav>
 
     <main>
-        <section id="articles">
+        <section id="articles" class="tab-content">
           <article class="template" data-category="cat">
             <header>
               <h1>Title</h1>
@@ -39,7 +45,27 @@
             <section class="article-body"></section>
           </article>
         </section>
-      </div>
+        <section id="about" class="tab-content">
+          <header>
+            Welcome to my portfolio!
+          </header>
+          <p>
+            My name is Kevin Chuang, I am currently a student at CodeFellows in the 301 night course. I've got an intermediate
+            knowledge in web design coding and plan to take the 401 Javascript class in May. Some of my hobbies include but are not
+            limited to:
+          </p>
+          <ul>
+            <li>
+              Video Games
+            </li>
+            <li>
+              Playing with kittens
+            </li>
+            <li>
+              Chinese Yoyo/Diabolo
+            </li>
+          </ul>
+        </section>
     </main>
     <footer>
       &copy; 2015 Code Fellows | Static Blog | Happy Ipsum!
@@ -48,5 +74,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
     <script src="scripts/blogArticles.js"></script>
     <script src="scripts/script.js"></script>
+    <script src="scripts/articleTab.js"></script>
   </body>
 </html>
