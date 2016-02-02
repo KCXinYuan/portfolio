@@ -1,0 +1,41 @@
+.icon-menu {
+  font-size: 35px;
+  float: left;
+}
+
+@media only screen and (max-width:600px) { /*Mobile devices*/
+  select {
+    width:90%;
+  }
+
+  #nav {
+    flex-direction: column;
+    background-color: transparent;
+    display: none;
+  }
+
+  .main-nav:hover #nav{
+    display: flex;
+  }
+
+  #nav li {
+    padding: 5px;
+  }
+
+  #nav li a:hover {
+    background-color: transparent;
+  }
+}
+
+@media only screen and (min-width: 601px) { /*Desktop/Tablet devices*/
+  main {
+    width: auto;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .icon-menu {
+    display: none;
+  }
+}
