@@ -10,28 +10,32 @@ function Article (opts) {
 };
 
 Article.prototype.toHtml = function() {
-  var $newArticle = $('article.template').clone();
-  $newArticle.data('title', this.title);
-  $newArticle.data('category', this.category);
-  $newArticle.data('author', this.author);
-  $newArticle.data('authorUrl', this.authorUrl);
-  $newArticle.data('publishedOn', this.publishedOn);
-  $newArticle.data('body', this.body);
+  // var $newArticle = $('article.template').clone();
+  // $newArticle.data('title', this.title);
+  // $newArticle.data('category', this.category);
+  // $newArticle.data('author', this.author);
+  // $newArticle.data('authorUrl', this.authorUrl);
+  // $newArticle.data('publishedOn', this.publishedOn);
+  // $newArticle.data('body', this.body);
+  var source = $('#article-template').html();
+  var template = Handlebars.compile(source);
+  var html = template(articles);
 
-  $newArticle.attr('data-category', this.category);
+  // $newArticle.attr('data-category', this.category);
 
-  $newArticle.find('h1').html(this.title);
-  $newArticle.find('a').html(this.author);
-  $newArticle.find('a').attr('href', this.authorUrl);
-
-  $newArticle.find('section.article-body').html(this.body);
-  $newArticle.find('time[pubdate]').attr('title', this.publishedOn);
-  $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
-
-  $newArticle.append('<hr>');
-
-  $newArticle.removeClass('template');
-  return $newArticle;
+  // $newArticle.find('h1').html(this.title);
+  // $newArticle.find('a').html(this.author);
+  // $newArticle.find('a').attr('href', this.authorUrl);
+  //
+  // $newArticle.find('section.article-body').html(this.body);
+  // $newArticle.find('time[pubdate]').attr('title', this.publishedOn);
+  // $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
+  //
+  // $newArticle.append('<hr>');
+  //
+  // $newArticle.removeClass('template');
+  // return $newArticle;
+  return template(this);
 };
 
 rawData.sort(function(a,b) {
