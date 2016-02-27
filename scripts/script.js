@@ -16,9 +16,12 @@ Article.prototype.toHtml = function() {
   return template(this);
 };
 
-rawData.sort(function(a,b) {
-  return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-});
+Article.loadAll = function(rawData) {
+  rawData.sort(function(a,b) {
+    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+  });
+};
+
 
 rawData.forEach(function(ele) {
   articles.push(new Article(ele));
@@ -27,3 +30,16 @@ rawData.forEach(function(ele) {
 articles.forEach(function(a) {
   $('#articles').append(a.toHtml());
 });
+
+articles.fetchArticles = function() {
+  if (localStorage.rawData) {
+    Article.loadAll(JSON.parse(localStorage.rawData));
+  }
+  else {
+    $.getJSON('data/blogArticles.json', function(rawData) {
+      Article.loadAll(rawData);
+      localStorage.rawData = JSON.stringify(rawData);
+      
+    });
+  }
+};
